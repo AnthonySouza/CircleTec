@@ -1,7 +1,5 @@
 <?php
 
-//exit;
-
 require_once 'init.php';
 require_once 'page.php';
 
@@ -15,11 +13,11 @@ require_once _COURSE_ROOT_ . 'course.php';
 
 if(isset($_GET['id'])) {
 
-	create_user_page(new User($_GET['id']));
+	create_user_page($_GET['id']);
 
 } else {
 
-	create_user_page(new User($_SESSION['user_id']));
+	create_user_page($_SESSION['user_id']);
 
 }
 

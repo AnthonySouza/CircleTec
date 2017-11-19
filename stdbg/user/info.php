@@ -9,8 +9,10 @@ require_once 'pubs.php';
 require_once 'followers.php';
 require_once 'friends.php';
 
-function create_user_top_content($user) {
+function create_user_top_content($user_id) {
 	global $_STRINGS;
+
+	$_usr = new  User($user_id);
 
 	echo '<div class="user-top-data">';
 	echo '<div class="background_loading">';
@@ -25,7 +27,7 @@ function create_user_top_content($user) {
     echo '<div class="user-top-info-contend">';
     echo '<div class="col-sm-4">';
     echo '<div class="user-avatar-picture">';
-    echo '<img src="' . $user->get_picture() . '" alt="">';
+    echo '<img src="' . $_usr->get_picture() . '" alt="">';
 	echo '<div class="choose-user-picture-button">';
     echo '<i class="icon-cog-1"></i>';
     echo '</div>';
@@ -35,15 +37,15 @@ function create_user_top_content($user) {
     echo '<div class="col-sm-8">';
     echo '<div class="user-info-data-content">';
     echo '<div class="user-avatar-name">';
-    echo '<span>' . $user->get_long_username() . '</span>';
+    echo '<span>' . $_usr->get_long_username() . '</span>';
     echo '</div>';
     echo '<div class="user-avatar-motto">';
-    echo '<span>' . $user->get_motto() . '</span>';
+    echo '<span>' . $_usr->get_motto() . '</span>';
     echo '</div>';
     echo '<div class="user-avatar-act-info">';
-    echo '<a href="#"><span><span>' . get_user_publications_count($user) . '</span>' . $_STRINGS->get_value('web.publications') . '</span></a>';
-	echo '<a href="#"><span><span>' . get_user_friends_count($user) . '</span>' . $_STRINGS->get_value('web.friends') . '</span></a>';
-	echo '<a href="#"><span><span>' . get_user_followers_count($user) . '</span>' . $_STRINGS->get_value('web.followers') . '</span></a>';
+    echo '<a href="#"><span><span>' . get_user_publications_count($_usr) . '</span>' . $_STRINGS->get_value('web.publications') . '</span></a>';
+	echo '<a href="#"><span><span>' . get_user_friends_count($_usr) . '</span>' . $_STRINGS->get_value('web.friends') . '</span></a>';
+	echo '<a href="#"><span><span>' . get_user_followers_count($_usr) . '</span>' . $_STRINGS->get_value('web.followers') . '</span></a>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
@@ -64,14 +66,16 @@ function create_user_top_content($user) {
 function create_user_view_menu_bar($view_user) {
 	global $_STRINGS;
 
+	$_usr = new User($view_user);
+
 	echo '<div class="user-top-data-bottom-menu" id="top-menu-user">';
     echo '<div class="user-info-top-menu-user">';
     echo '<div class="content">';
     echo '<div class="user-picture">';
-    echo '<img src="' . $view_user->get_picture() . '" alt="">';
+    echo '<img src="' . $_usr->get_picture() . '" alt="">';
     echo '</div>';
     echo '<div class="user-name">';
-    echo '<span>' . $view_user->get_long_username() . '</span>';
+    echo '<span>' . $_usr->get_long_username() . '</span>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
@@ -102,9 +106,10 @@ function create_user_view_menu_bar($view_user) {
 
 }
 
-function create_user_info_content(User $user) {
+function create_user_info_content($user_id) {
 	global $_STRINGS;
 
+	$user = new User($user_id);
 	$course = new Course($user->get_course());
 
 	echo '<div class="left-content">';

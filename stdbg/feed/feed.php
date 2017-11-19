@@ -54,11 +54,11 @@ function create_feed_content_html($user) {
 
 }
 
-function create_feed_global_content($user) {
+function create_feed_global_content($user_id) {
 
 	echo '<div class="news-feed-contend news-feed-user-vw-contend" style="top: 0;">';
 
-	draw_create_new_post_content($user);
+	draw_create_new_post_content($user_id);
 
 	echo '<div class="feed-post-content">';
 
@@ -69,8 +69,10 @@ function create_feed_global_content($user) {
 
 }
 
-function draw_create_new_post_content($user) {
+function draw_create_new_post_content($user_id) {
 	global $_STRINGS;
+
+	$usr = new User($user_id);
 
 	echo '<div class="new-post-content">';
 	echo '<div class="content">';
@@ -82,7 +84,7 @@ function draw_create_new_post_content($user) {
 
 	echo '<div class="new-post-input-content">';
 	echo '<div class="user-picture">';
-	echo '<img src="' . $user->get_picture() . '">';
+	echo '<img src="' . $usr->get_picture() . '">';
 	echo '</div>';
 	echo '<div class="input-content">';
 	echo '<textarea id="new-post-input"></textarea>';
@@ -200,18 +202,19 @@ function draw_create_new_post_content_html($user) {
 
 function draw_post($post) {
 
-	$user = new User($post->get_user_id());
+	$post = new Post($post);
 	$usr = new User($_SESSION['user_id']);
+	$__usr = new User($post->get_user_id());
 
 	echo '<div class="post-contend" id="' . $post->get_id() . '">';
 	echo '<div class="post-top">';
 	echo '<div class="user-contend">';
 	echo '<div class="picture">';
-	echo '<img src="' . $user->get_picture() . '">';
+	echo '<img src="' . $__usr->get_picture() . '">';
 	echo '</div>';
 	echo '<div class="name">';
-	echo '<a href="user.php?id=' . $user->get_id() . '">';
-	echo '<span>' . $user->get_long_username() . '</span>';
+	echo '<a href="user.php?id=' . $__usr->get_id() . '">';
+	echo '<span>' . $__usr->get_long_username() . '</span>';
 	echo '</a>';
 	echo '</div>';
 	echo '<div class="post-visibility">';
@@ -249,8 +252,9 @@ function draw_post($post) {
 
 function draw_post_html($post) {
 	$html = '';
-	$usr = new User($_SESSION['user_id']);
 
+	$post = new Post($post);
+	$usr = new User($_SESSION['user_id']);
 	$user = new User($post->get_user_id());
 
 	$html .=  '<div class="post-contend" id="' . $post->get_id() . '">';
@@ -451,7 +455,7 @@ function write_all_posts($user_id) {
 			for ($i = 0; $i < sizeof($arr); $i++)
 			{
 				
-				draw_post(new Post($arr[$i]));
+				draw_post($arr[$i]);
 
 			}
 			
@@ -472,7 +476,7 @@ function write_all_posts_html($user_id) {
 			for ($i = 0; $i < sizeof($arr); $i++)
 			{
 				
-				$html = draw_post_html(new Post($arr[$i]));
+				$html = draw_post_html($arr[$i]);
 
 			}
 			
@@ -493,7 +497,7 @@ function write_init_global_posts() {
 		for ($i = 0; $i < sizeof($arr); $i++)
 		{
 			
-			draw_post(new Post($arr[$i]));
+			draw_post($arr[$i]);
 
 		}
 		
@@ -501,8 +505,10 @@ function write_init_global_posts() {
 		
 }
 
-function get_all_posts_arr_by_user($user) {
+function get_all_posts_arr_by_user($user_id) {
 	global $socialtecdatabase;
+
+	$user = new User($user_id);
 
 	if($conn = $socialtecdatabase->prepare("SELECT `id` FROM `post` WHERE `user_id`='" . $user->get_id() . "' ORDER BY `posted` DESC")) {
 	

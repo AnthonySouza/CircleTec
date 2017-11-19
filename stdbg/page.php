@@ -89,21 +89,19 @@ function insert_imports_js() {
 
 function create_init_page_data($user_id) {
 
-    $user = new User($user_id);
-
     create_top_page(WEB_SITE_NAME, WEB_SITE_ICON, WEB_SITE_DESCRIPTION);
     create_body_content();
     insert_imports_css();
 
 	
-    create_page_user_interface_content($user);
+    create_page_user_interface_content($user_id);
 
     insert_imports_js();
     close_body_content();
     create_end_page();
 }
 
-function create_page_user_interface_content($user) {
+function create_page_user_interface_content($usr) {
 	echo '<div class="container-fluid">';
 	echo '<div class="row">';
 
@@ -112,12 +110,12 @@ function create_page_user_interface_content($user) {
 	echo '</div>';
 	echo '<div id="center" class="col-xs-6 col-sm-7">';
 
-	create_feed_global_content($user);
+	create_feed_global_content($usr);
 
 	echo '</div>';
 	echo '<div id="right" class="col-xs-6 col-sm-3 content-fixed">';
 
-	create_top_menu_content($user);
+	create_top_menu_content($usr);
 
 	create_thisday_box();
 
@@ -279,7 +277,9 @@ function create_page_more_divisor() {
 
 function create_user_page($view_user) {
 
-	create_top_page($view_user->get_long_username(), WEB_SITE_ICON, WEB_SITE_DESCRIPTION);
+	$usr = new User($view_user);
+
+	create_top_page($usr->get_long_username(), WEB_SITE_ICON, WEB_SITE_DESCRIPTION);
 
 	create_body_content();
 	insert_imports_css();
@@ -288,7 +288,7 @@ function create_user_page($view_user) {
 	create_user_top_content($view_user);
 	create_user_view_menu_bar($view_user);
 
-	create_page_user_view_interface_content(new User($_SESSION['user_id']), $view_user);
+	create_page_user_view_interface_content($_SESSION['user_id'], $view_user);
 	
 	insert_imports_js();
 	close_body_content();

@@ -39,10 +39,13 @@ function create_user_top_menu_b($user) {
 	echo '</div>';
 }
 
-function create_user_top_menu($user) {
+function create_user_top_menu($user_id) {
+
+	$usr = new User($user_id);
+
 	echo '<div class="user-buttom-menu">';
 	echo '<div class="user-picture">';
-	echo '<img class="modal-trigger" data-modal="#modal-3" src="' . $user->get_picture() . '" alt="">';
+	echo '<img class="modal-trigger" data-modal="#modal-3" src="' . $usr->get_picture() . '" alt="">';
 	echo '<div class="notification">';
 	echo '<div class="notification-label">';
 	echo '<span>1</span>';

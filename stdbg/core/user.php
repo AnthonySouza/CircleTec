@@ -53,7 +53,7 @@ class User
 			}
 		}
 	}
-
+	
 	private static $id;
 	public function get_id() {
 		return self::$id;
