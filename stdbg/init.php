@@ -30,6 +30,7 @@ define("_WEATHER_ROOT_", $_SERVER['DOCUMENT_ROOT'] . '/weather/', TRUE);
 define("_MODULE_ROOT_", $_SERVER['DOCUMENT_ROOT'] . '/module/', TRUE);
 define("_SEARCH_ROOT_", $_SERVER['DOCUMENT_ROOT'] . '/search/', TRUE);
 define("_EMOJIONE_ROOT_", $_SERVER['DOCUMENT_ROOT'] . '/emojis/src/', TRUE);
+define("_FRIENDS_ROOT_", $_SERVER['DOCUMENT_ROOT'] . '/friends/', TRUE);
 
 define("_URL_CORE_ROOT_", __URL_ROOT__ . '/core/', TRUE);
 define("_URL_USER_ROOT_", __URL_ROOT__ . '/user/', TRUE);

@@ -167,6 +167,9 @@ function create_user_info_content($user_id) {
     echo '<span id="spn-comp-event-value">Infoday Etec</span>';
     echo '</div>';
     echo '</div>';
+
+	draw_friends_content($user_id);
+
     echo '</div>';
 
 }

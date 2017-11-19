@@ -6360,3 +6360,55 @@ img.hover-shadow {
   outline: none;
 }
 
+.user-left-friends-contend {
+  display: block;
+  height: auto;
+  position: relative;
+  border: 1px solid #e4e4e4;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 0 10px 0 10px;
+}
+
+.user-left-friends-contend .content {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
+.user-left-friends-contend .content .top-title {
+  text-align: center;
+  display: block;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 10px;
+}
+
+.user-left-friends-contend .content .top-title span {
+  font-size: 16px;
+  color: #717171;
+  font-weight: 400;
+}
+
+.user-left-friends-contend .content .friends-content-list {
+  margin: 0;
+  height: 100%;
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+.user-left-friends-contend .content .friends-content-list .friend-content {
+  display: inline-flex;
+  position: relative;
+  padding: 0px;
+  border: 1px solid #e4e4e4;
+  border-radius: 50%;
+  width: 20%;
+  margin: 2.5px;
+}
+
+.user-left-friends-contend .content .friends-content-list .friend-content a .user-picture img {
+  width: 100%;
+  position: relative;
+  border-radius: 50%;
+}

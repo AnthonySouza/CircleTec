@@ -12,6 +12,7 @@ require_once _CORE_ROOT_ . 'user.php';
 require_once _USER_ROOT_ . 'info.php';
 require_once _WEATHER_ROOT_ . 'weather.php';
 require_once _SEARCH_ROOT_ . 'search.php';
+require_once _FRIENDS_ROOT_ . 'friends.php';
 
 function create_top_page($web_name, $icon, $description) {
 	echo '<!DOCTYPE html>';
@@ -129,18 +130,18 @@ function create_page_user_interface_content($usr) {
 	echo '</div>';
 }
 
-function create_page_user_view_interface_content($logged_user, $user) {
+function create_page_user_view_interface_content($logged_user, $user_id) {
 	echo '<div class="container-fluid">';
 	echo '<div class="row">';
 
 	echo '<div id="left" class="col-xs-6 col-sm-2">';
 
-	create_user_info_content($user);
+	create_user_info_content($user_id);
 
 	echo '</div>';
 	echo '<div id="center" class="col-xs-6 col-sm-7">';
 
-	create_feed_content($user);
+	create_feed_content($user_id);
 
 	echo '</div>';
 	echo '<div id="right" class="col-xs-6 col-sm-3 content-fixed">';

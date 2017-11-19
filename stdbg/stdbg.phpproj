@@ -86,6 +86,8 @@
     <Compile Include="feed\post.php" />
     <Compile Include="feed\register.php" />
     <Compile Include="feed\user\index.php" />
+    <Compile Include="friends\friend.php" />
+    <Compile Include="friends\friends.php" />
     <Compile Include="help\me\github\forkme.php" />
     <Compile Include="index.php" />
     <Compile Include="init.php" />
@@ -141,6 +143,7 @@
     <Folder Include="day\" />
     <Folder Include="module\" />
     <Folder Include="emojis\" />
+    <Folder Include="friends\" />
     <Folder Include="search\" />
     <Folder Include="user\" />
     <Folder Include="thanks\" />
