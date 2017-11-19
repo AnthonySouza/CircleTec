@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>stdbg</Name>
+    <ProjectGuid>fbad3a25-de97-4aab-9d97-6c2d12437069</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>stdbg</RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>stdbg</AssemblyName>
+    <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+    <Server>PHPDev</Server>
+    <PublishEvent>None</PublishEvent>
+    <PHPDevAutoPort>True</PHPDevAutoPort>
+    <PHPDevPort>8095</PHPDevPort>
+    <PHPDevHostName>localhost</PHPDevHostName>
+    <IISProjectUrl>http://localhost:8095/</IISProjectUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="calendar\event\index.php" />
+    <Compile Include="calendar\index.php" />
+    <Compile Include="core\assets.php" />
+    <Compile Include="core\comment.php" />
+    <Compile Include="core\database.php" />
+    <Compile Include="core\device.php" />
+    <Compile Include="core\errors.php" />
+    <Compile Include="core\functions.php" />
+    <Compile Include="core\imgur\imgur.php" />
+    <Compile Include="core\imgur\uploaded_image.php" />
+    <Compile Include="core\imgur\upload.php" />
+    <Compile Include="core\json.php" />
+    <Compile Include="core\language.php" />
+    <Compile Include="core\login.php" />
+    <Compile Include="core\method.php" />
+    <Compile Include="core\page.php" />
+    <Compile Include="core\post.php" />
+    <Compile Include="core\register.php" />
+    <Compile Include="core\self.php" />
+    <Compile Include="core\session.php" />
+    <Compile Include="core\sha.php" />
+    <Compile Include="core\token.php" />
+    <Compile Include="core\tokenauth.php" />
+    <Compile Include="core\user.php" />
+    <Compile Include="core\userlogin.php" />
+    <Compile Include="core\ajax.php" />
+    <Compile Include="course\course.php" />
+    <Compile Include="day\day.php" />
+    <Compile Include="emojis\autoload.php" />
+    <Compile Include="emojis\src\Client.php" />
+    <Compile Include="emojis\src\ClientInterface.php" />
+    <Compile Include="emojis\src\Emojione.php" />
+    <Compile Include="emojis\src\Ruleset.php" />
+    <Compile Include="emojis\src\RulesetInterface.php" />
+    <Compile Include="emojis\test\ConversionTest.php" />
+    <Compile Include="emojis\test\EmojioneTest.php" />
+    <Compile Include="emojis\test\EmojiTest.php" />
+    <Compile Include="emojis\test\SpriteTest.php" />
+    <Compile Include="events\aj_event_loader.php" />
+    <Compile Include="events\colaborador.php" />
+    <Compile Include="events\colaboradores.php" />
+    <Compile Include="events\comparecera.php" />
+    <Compile Include="events\confirmados.php" />
+    <Compile Include="events\del_ev_user_comp.php" />
+    <Compile Include="events\etec_event.php" />
+    <Compile Include="events\events.php" />
+    <Compile Include="events\ev_user_comp.php" />
+    <Compile Include="events\e_modal.php" />
+    <Compile Include="events\index.php" />
+    <Compile Include="events\newevent.php" />
+    <Compile Include="events\user_comp.php" />
+    <Compile Include="events\w_n_events.php" />
+    <Compile Include="feed\aj_feed.php" />
+    <Compile Include="feed\comment.php" />
+    <Compile Include="feed\data_image.php" />
+    <Compile Include="feed\data_text.php" />
+    <Compile Include="feed\feed.php" />
+    <Compile Include="feed\global\index.php" />
+    <Compile Include="feed\like.php" />
+    <Compile Include="feed\picture_receptor.php" />
+    <Compile Include="feed\post.php" />
+    <Compile Include="feed\register.php" />
+    <Compile Include="feed\user\index.php" />
+    <Compile Include="help\me\github\forkme.php" />
+    <Compile Include="index.php" />
+    <Compile Include="init.php" />
+    <Compile Include="login\functions.php" />
+    <Compile Include="login\index.php" />
+    <Compile Include="login\login.php" />
+    <Compile Include="login\logincallback.php" />
+    <Compile Include="login\user_login.php" />
+    <Compile Include="menu\menu.php" />
+    <Compile Include="module\module.php" />
+    <Compile Include="page.php" />
+    <Compile Include="register\index.php" />
+    <Compile Include="register\registercallback.php" />
+    <Compile Include="res.php" />
+    <Compile Include="default\unl\index.php" />
+    <Compile Include="search.php" />
+    <Compile Include="search\aj_search.php" />
+    <Compile Include="search\search.php" />
+    <Compile Include="thanks\project\index.php" />
+    <Compile Include="user.php" />
+    <Compile Include="user\aj_user.php" />
+    <Compile Include="user\followers.php" />
+    <Compile Include="user\friends.php" />
+    <Compile Include="user\menu.php" />
+    <Compile Include="user\pubs.php" />
+    <Compile Include="user\user_page.php" />
+    <Compile Include="user\info.php" />
+    <Compile Include="utils\generator.php" />
+    <Compile Include="utils\user.php" />
+    <Compile Include="weather\weather.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="calendar\event\" />
+    <Folder Include="core\" />
+    <Folder Include="core\imgur\" />
+    <Folder Include="emojis\src\" />
+    <Folder Include="emojis\test\" />
+    <Folder Include="feed\" />
+    <Folder Include="feed\global\" />
+    <Folder Include="feed\user\" />
+    <Folder Include="help\me\" />
+    <Folder Include="help\me\github\" />
+    <Folder Include="login\" />
+    <Folder Include="default\" />
+    <Folder Include="calendar\" />
+    <Folder Include="help\" />
+    <Folder Include="events\" />
+    <Folder Include="menu\" />
+    <Folder Include="course\" />
+    <Folder Include="day\" />
+    <Folder Include="module\" />
+    <Folder Include="emojis\" />
+    <Folder Include="search\" />
+    <Folder Include="user\" />
+    <Folder Include="thanks\" />
+    <Folder Include="register\" />
+    <Folder Include="default\unl\" />
+    <Folder Include="thanks\project\" />
+    <Folder Include="utils\" />
+    <Folder Include="weather\" />
+  </ItemGroup>
+</Project>
