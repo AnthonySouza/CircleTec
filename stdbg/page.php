@@ -55,6 +55,7 @@ function insert_imports_css() {
 	echo '<link rel="stylesheet" href="/stresources/assets/emojis/css/emojione-awesome.css" type="text/css" />';
 	echo '<link rel="stylesheet" href="/stresources/assets/emojis/css/emojione-awesome.css" type="text/css" />';
 	echo '<link rel="stylesheet" href="/stresources/assets/emojis/css/emojione.css" type="text/css" />';
+	echo '<link rel="stylesheet" href="/stresources/assets/croppie/css/croppie.css" type="text/css" />';
 
 }
 
@@ -85,6 +86,8 @@ function insert_imports_js() {
 	echo '<script src="/stresources/assets/dinamics/js/script.js"></script>';
 	echo '<script src="/stresources/assets/socialtec/js/script.js"></script>';
 	echo '<script src="/stresources/assets/socialtec/js/post.js"></script>';
+	echo '<script src="/stresources/assets/croppie/js/croppie.min.js"></script>';
+	echo '<script src="/stresources/assets/croppie/js/deploy.js"></script>';
 
 }
 

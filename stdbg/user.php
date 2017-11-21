@@ -21,6 +21,4 @@ if(isset($_GET['id'])) {
 
 }
 
-//$_COURSE = new Course($_USER->get_course());
-
 ?>

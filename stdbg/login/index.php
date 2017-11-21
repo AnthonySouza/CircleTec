@@ -162,7 +162,7 @@ if(isset($error_code) || null != $error_code) {
 						<button type="button" class="login__submit">Entrar</button>
 						<p class="login__signup">
 							Ainda não tem uma conta? &nbsp;
-							<a href="../new/user/account/">Cadastrar-se</a>
+							<a href="/register/">Cadastrar-se</a>
 						</p>
 					</div>
 				</form>

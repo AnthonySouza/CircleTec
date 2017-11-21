@@ -100,8 +100,8 @@ if(isset($_SESSION['user_id'])) {
 	$_USER = new User($_SESSION['user_id']);
 }
 
-function to_feed_page() {
+function to_feed_page($args = '') {
 
-    header("Location: " . _GLOBAL_FEED_ROOT_);
+    header("Location: " . _GLOBAL_FEED_ROOT_ . '?' . $args);
 
 }

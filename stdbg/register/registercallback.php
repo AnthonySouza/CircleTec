@@ -16,8 +16,8 @@ if($ref_token = get_method_value(GET, 'token')) {
 		if(TokenAuth::auth_token($ref_token)) {
 			
 			verify_reg_inputs(
-				get_method_value(POST, 'first_name'),
-				get_method_value(POST, 'last_name'),
+				base64_encode(get_method_value(POST, 'first_name')),
+				base64_encode(get_method_value(POST, 'last_name')),
 				get_method_value(POST, 'gender'),
 				get_method_value(POST, 'age'),
 				get_method_value(POST, 'email'),

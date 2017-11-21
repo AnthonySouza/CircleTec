@@ -21,6 +21,9 @@ function create_user_top_content($user_id) {
 	echo '</div>';
 
     echo '<div class="col-sm-2">';
+	echo '<div class="op-buttons-content">';
+
+	echo '</div>';
     echo '</div>';
     echo '<div class="col-sm-8">';
 
@@ -38,6 +41,13 @@ function create_user_top_content($user_id) {
     echo '<div class="user-info-data-content">';
     echo '<div class="user-avatar-name">';
     echo '<span>' . $_usr->get_long_username() . '</span>';
+
+	echo '<div class="change-name-button-content">';
+	echo '<a href="#">';
+	echo '<i class="icon-pencil-neg"></i>';
+	echo '</a>';
+	echo '</div>';
+
     echo '</div>';
     echo '<div class="user-avatar-motto">';
     echo '<span>' . $_usr->get_motto() . '</span>';
@@ -54,7 +64,10 @@ function create_user_top_content($user_id) {
 	echo '<div class="col-sm-2">';
 	echo '<div class="choose-backgound-picture-button">';
 	echo '<div class="content">';
-	echo '<button>Trocar Capa</button>';
+	echo '<a class="button-upload-background-picture" href="#">';
+	echo '<span>Trocar Capa</span>';
+	echo '</a>';
+	echo '<input type="file" id="input-upload-background-picture">';
     echo '</div>';
     echo '</div>';
     echo '</div>';

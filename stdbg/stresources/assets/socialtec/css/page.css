@@ -2209,7 +2209,7 @@ div[id='response-comment'] {
   position: relative;
   background-color: #f9f9f9;
   background-clip: initial;
-  background-size: cover;
+  background-repeat: round;
 }
 
 .user-top-data .picture{
@@ -2377,7 +2377,7 @@ div[id='response-comment'] {
 }
 
 .user-top-info-contend .user-avatar-name, .user-avatar-motto {
-  display: block;
+  display: flex;
   position: relative;
 }
 
@@ -5469,7 +5469,7 @@ nav ul li ul li a:hover {
   display: block;
 }
 
-.choose-backgound-picture-button button {
+.choose-backgound-picture-button .button-upload-background-picture {
   display: none;
   padding: 10px;
   font-size: 17px;
@@ -5483,18 +5483,22 @@ nav ul li ul li a:hover {
   transition: 0.3s ease-out, left 1.5s ease-in-out;
 }
 
-.user-top-data:hover .choose-backgound-picture-button button {
+.user-top-data:hover .choose-backgound-picture-button .button-upload-background-picture {
   display: block;
   background-color: rgba(255, 255, 255, 0.47);
   color: #ffffff;
   border: 1px solid #ffffff;
 }
 
-.user-top-data .choose-backgound-picture-button button:hover {
+.user-top-data .choose-backgound-picture-button .button-upload-background-picture:hover {
   display: block;
   background-color: rgba(0, 173, 255, 0.7);
   color: #ffffff;
   border: 1px solid rgba(0, 67, 99, 0.54);
+}
+
+.choose-backgound-picture-button input[type='file'] {
+  visibility: hidden;
 }
 
 .choose-user-picture-button {	
@@ -6411,4 +6415,127 @@ img.hover-shadow {
   width: 100%;
   position: relative;
   border-radius: 50%;
+}
+
+.user-top-data-editing-mode {
+  background-color: #3e3e3e;
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-avatar-picture img {
+  background-color: #353535;
+  cursor: default;
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-avatar-picture .choose-user-picture-button i {
+  display: none;
+  visibility: hidden;
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-name,
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-motto,
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-act-info {
+  background-color: rgba(0, 0, 0, 0.36);
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-name {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-motto {
+  border-bottom-right-radius: 5px;
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-act-info {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  bottom: -2px;
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-name span {
+  visibility: hidden;
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-motto span {
+  visibility: hidden;
+}
+
+.user-top-data-editing-mode .user-top-info-contend .user-info-data-content .user-avatar-act-info a span {
+  visibility: hidden;
+}
+
+.save-editing-mode-button, .cancel-editing-mode-button {
+  display: block;
+  position: relative;
+  margin: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.save-editing-mode-button a {
+  background-color: rgba(0, 161, 255, 0.28);
+  border: 1px solid rgba(0, 112, 177, 0.74);
+  color: #fff;
+  font-size: 15px;
+  padding: 4px 10px 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-editing-mode-button a {
+  background-color: rgba(255, 0, 0, 0.27);
+  border: 1px solid rgba(177, 0, 0, 0.74);
+  color: #fff;
+  font-size: 15px;
+  padding: 4px 10px 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-editing-mode-button a:hover {
+  background-color: rgba(0, 162, 255, 0.7);
+  border: 1px solid rgba(0, 112, 177, 0.8);
+}
+
+.cancel-editing-mode-button a:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+  border: 1px solid rgba(177, 0, 0, 0.8);
+}
+
+.op-buttons-content {
+  display: flex;
+  position: relative;
+  padding: 5px 0 5px 0;
+}
+
+.change-name-button-content {
+  display: block;
+  position: relative;
+  padding: 10px;
+  visibility: hidden;
+}
+
+.change-name-button-content a {
+  font-size: 19px;
+  color: #757575;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.user-avatar-name:hover .change-name-button-content {
+  visibility: visible;
+}
+
+.input-change-name-content {
+  display: block;
+  position: relative;
+  width: 90%;
+}
+
+.input-change-name-content input {
+  font-size: 21px;
+  color: #5a5a5a;
+  background: transparent;
+  width: 100%;
 }

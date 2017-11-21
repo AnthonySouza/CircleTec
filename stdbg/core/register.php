@@ -35,7 +35,7 @@ function register_trigger($name,$lastname, $gender, $age, $mail, $pass ,$cpass) 
 							switch (login_trigger($mail, $pass)) {
 								case LOGGED_SUCCEFULL:
 									
-									to_feed_page();
+									header("Location: /user.php/?action=register&view_completion_modal_req=true&ref_token=" . GenerateString(_LOGIN_, 128));
 
 									break;
 								

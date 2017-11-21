@@ -35,7 +35,7 @@ if( TokenAuth::set_token($token, PAGE_TOKEN)) {
 				</md-toolbar>
 				<div layout-padding="">
 						<div></div>
-						<form id="form" name="userForm" method="POST" action="/register/registercallback.php?token=<?php echo $token; ?>" ng-submit="user.submit(userForm.$valid)" enctype="multipart/form-data">
+						<form id="reg_form" name="userForm" method="POST" action="/register/registercallback.php?token=<?php echo $token; ?>" ng-submit="user.submit(userForm.$valid)" enctype="multipart/form-data">
 								<input type="hidden" name="action" value="signup" />
 								<div layout="row" layout-sm="column">
 										<md-input-container flex-gt-sm="">
@@ -86,7 +86,7 @@ if( TokenAuth::set_token($token, PAGE_TOKEN)) {
 								<div layout="row" layout-sm="column">
 										<md-input-container flex-gt-sm="">
 												<label>Senha</label>
-												<input id="password" name="password" ng-model="user.password" type="password" minlength="8" maxlength="100" ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/" required placeholder="********">
+												<input id="pass1" name="password" ng-model="user.password" type="password" minlength="8" maxlength="100" ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/" required placeholder="********">
 												<div ng-if="userForm.password.$dirty" ng-messages="userForm.password.$error" role="alert" multiple>
 														<div ng-message="required">Uma senha é necessária.</div>
 														<div ng-message="pattern">Sua senha deve pelo menos conter um número, um caractere minúsculo e um maiúsculo.</div>
@@ -96,14 +96,14 @@ if( TokenAuth::set_token($token, PAGE_TOKEN)) {
 										</md-input-container>
 										<md-input-container flex-gt-sm="">
 												<label>Confirmar Senha</label>
-												<input id="confmPassword" name="confmPassword" ng-model="user.confmPassword" type="password" minlength="8" maxlength="100" ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/" required compare-to="user.password" placeholder="********">
+												<input id="pass2" name="confmPassword" ng-model="user.confmPassword" type="password" minlength="8" maxlength="100" ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/" required compare-to="user.password" placeholder="********">
 												<div ng-if="userForm.confmPassword.$dirty" ng-messages="userForm.confmPassword.$error" role="alert">
 														<div ng-message="required">Senha de confirmação é necessária.</div>
 														<div ng-message="compareTo">As senhas não se coincidem.</div>
 												</div>
 										</md-input-container>
 								</div>
-								<md-button onclick="procceed_login()" class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" ng-disabled="userForm.$invalid" name="submit">Registrar</md-button>
+								<md-button onclick="procceed()" class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" ng-disabled="userForm.$invalid" name="submit">Registrar</md-button>
 								<md-button class="md-raised md-primary" ng-href="https://codepen.io/faizanrupani/pen/QjzMJp" target="_blank" style="width:100%; margin: 15px 0px 0px 0px;">Já tenho uma conta</md-button>
 						</form>
 				</div>
@@ -113,9 +113,16 @@ if( TokenAuth::set_token($token, PAGE_TOKEN)) {
 	<script src="http://127.0.0.1/stresources/assets/criptography/cripto.js"></script>
 	<script src="http://127.0.0.1/stresources/assets/jquery/jquery.min.js"></script>
 	<script>
-		function procceed_login() {
-			$('#password').val(formhash($('#password').val()));
-			$('#confmPassword').val(formhash($('#confmPassword').val()));
+		function procceed() {
+
+			$('<input type="hidden" id="password">').appendTo('#reg_form');
+			$('<input type="hidden" id="confmPassword">').appendTo('#reg_form');
+
+			$('#password').val($('#pass1'));
+			$('#confmPassword').val($('#pass2'));
+
+			$('#reg_form').submit();
+
 		}
 	</script>
 	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js'></script>
