@@ -21,7 +21,7 @@ Tudo que está no site original, é tudo que está aqui.
 Eu não escrevi uma boa documentação sobre este projeto, nem mesmo as linhas de código estão comentadas '-', caso você queira implementar e/ou entender alguma parte deste projeto, entre em contato comigo : ), será mais fácil e te poupará tempo ; ).
 
 ### Encontrou algum bug?
-Sinto lhe dizer mas eu realmente tenho conciência desses bugs (heuhehue), escreva-me um email para mim com o assunto (CT-BUGS) que eu tentarei resolver o mais rápido o possivel.
+Sinto lhe dizer mas eu realmente tenho conciência desses bugs, escreva-me um email para mim com o assunto (CT-BUGS) que eu tentarei resolver o mais rápido o possivel.
 
 ### Quer nos ajudar?
 A quantidade de codigos (grudados) uns aos outros deixaram certas partes desse projeto um pouco complexas, caso queira entrar para a equipe, será necessário o uso dessas ferramentas.
@@ -52,9 +52,4 @@ Extensões
 
 #Colaboradores
 
-Obrigado a todos que me ajudaram a fazer este pequeno projeto se tornar realidade e me apoiar nos momentos difíceis de raiva e ansiedade.
-
-Ricardo Azzevedo,
-Pedro Lima
-
-PAI EU TE AMO
+Obrigado a todos que me ajudaram a fazer este pequeno projeto se tornar realidade.
